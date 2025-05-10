@@ -1,3 +1,4 @@
+using Attributes;
 using TMPro;
 using UnityEngine;
 
@@ -6,8 +7,12 @@ namespace View
     [RequireComponent(typeof(TextMeshProUGUI))]
     public class TextBar : MonoBehaviour
     {
-        [SerializeField] private Health _health;
+        [SerializeField, Restrict(typeof(IChangeableValue))]
+        private Object _changeable;
+
         private TextMeshProUGUI _textMeshPro;
+
+        private IChangeableValue Changeable => _changeable as IChangeableValue;
 
         private void Awake()
         {
@@ -16,20 +21,20 @@ namespace View
 
         private void OnEnable()
         {
-            _health.Damaged += SetValue;
-            _health.Healed += SetValue;
+            Changeable.Decreased += SetValue;
+            Changeable.Increased += SetValue;
             SetValue();
         }
 
         private void OnDisable()
         {
-            _health.Damaged -= SetValue;
-            _health.Healed -= SetValue;
+            Changeable.Decreased -= SetValue;
+            Changeable.Increased -= SetValue;
         }
 
         private void SetValue()
         {
-            _textMeshPro.text = $"{_health.Value}/{_health.MaxHealth}";
+            _textMeshPro.text = $"{Changeable.Value}/{Changeable.MaxValue}";
         }
     }
 }

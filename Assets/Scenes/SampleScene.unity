@@ -221,12 +221,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5284706a78694b87b0d9ffb686300004, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: {fileID: 1004299859}
+  _changeable: {fileID: 1004299859}
   _delta: 70
   _colorDelaySeconds: 0.3
   _defaultColor: {r: 1, g: 1, b: 1, a: 1}
-  _damageColor: {r: 1, g: 0, b: 0, a: 1}
-  _healColor: {r: 0, g: 1, b: 1, a: 1}
+  _decreaseColor: {r: 1, g: 0, b: 0, a: 1}
+  _increaseColor: {r: 0, g: 1, b: 1, a: 1}
   _fillTexture: {fileID: 610378760}
 --- !u!1 &184694759
 GameObject:
@@ -277,7 +277,7 @@ GameObject:
   - component: {fileID: 450079698}
   - component: {fileID: 450079696}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Text Bar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -413,7 +413,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b499ba57f61f4c2ea86203fa4ce2952c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: {fileID: 1004299859}
+  _changeable: {fileID: 1004299859}
 --- !u!1 &487399679
 GameObject:
   m_ObjectHideFlags: 0
@@ -903,7 +903,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b35e88c92cc64d60945c3d48605a7ad9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: {fileID: 1004299859}
+  _changeable: {fileID: 1004299859}
 --- !u!114 &1066485089
 MonoBehaviour:
   m_ObjectHideFlags: 0
